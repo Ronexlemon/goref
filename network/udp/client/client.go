@@ -25,7 +25,7 @@ func main(){
                 return
         }
  fmt.Printf("UDB Server is %s \n",udpConn.RemoteAddr())
- udpConn.Close()
+ defer udpConn.Close()
 
  for{
 	reader := bufio.NewReader(os.Stdin)
