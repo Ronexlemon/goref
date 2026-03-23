@@ -1,0 +1,15 @@
+syntax ="proto3";
+
+option go_package = "github.com/ronexlemon/dsa/network/grpc/shared/proto";
+
+
+message HelloMessage{
+    string name =1;
+}
+message HelloReply{
+    string name =1;
+}
+
+service Greater{
+    rpc SayHello(HelloMessage) returns(HelloReply);
+}
