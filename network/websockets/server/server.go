@@ -12,14 +12,19 @@ var upgrader = websocket.Upgrader{
 	CheckOrigin: func(r *http.Request)bool{return true},
 }
 
-func handleConnection(w http.ResponseWriter,r *http.Request){
+func wsHandler(w http.ResponseWriter,r *http.Request){
 	conn,err := upgrader.Upgrade(w,r,nil)
 	if err !=nil{
 		fmt.Println("Error creating a connection ",err)
 		return
 	}
 	defer conn.Close()
+	go handleConnection(conn)
 
+	
+}
+
+func handleConnection(conn *websocket.Conn){
 	for{
 	typeData,message,err := conn.ReadMessage()
 	if err !=nil{
@@ -36,9 +41,8 @@ func handleConnection(w http.ResponseWriter,r *http.Request){
 
 	}
 }
-
 func main(){
-	http.HandleFunc("/ws",handleConnection)
+	http.HandleFunc("/ws",wsHandler)
 	fmt.Println("WebSocket server started on :8080")
     err := http.ListenAndServe(":8080", nil)
     if err != nil {
