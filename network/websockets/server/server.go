@@ -1,4 +1,4 @@
-package server
+package main
 
 import (
 	"fmt"
@@ -15,7 +15,7 @@ var upgrader = websocket.Upgrader{
 func handleConnection(w http.ResponseWriter,r *http.Request){
 	conn,err := upgrader.Upgrade(w,r,nil)
 	if err !=nil{
-		fmt.Printf("Error creating a connection \n",err)
+		fmt.Println("Error creating a connection ",err)
 		return
 	}
 	defer conn.Close()
