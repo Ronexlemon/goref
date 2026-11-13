@@ -17,6 +17,8 @@ func main(){
 	//channel.RUNEx()
 	//channel.MutualExclusion()
 	//channel.Print50()
-	channel.Print5Numbers()
+	//channel.Print5Numbers()
+	//channel.UnbufferedChannel()
+	channel.CalculateSum()
 	
 }
