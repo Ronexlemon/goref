@@ -16,6 +16,7 @@ func main(){
 	//channel.TimeSequenceDefault()
 	//channel.RUNEx()
 	//channel.MutualExclusion()
-	channel.Print50()
+	//channel.Print50()
+	channel.Print5Numbers()
 	
 }
