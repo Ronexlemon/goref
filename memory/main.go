@@ -7,5 +7,6 @@ func main(){
 	//synchronization.SyncThroughChannel()
 	//synchronization.RunWork()
 	//synchronization.RunLock()
-	synchronization.RunRWLocks()
+	//synchronization.RunRWLocks()
+	synchronization.RunGame()
 }
