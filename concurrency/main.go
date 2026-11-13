@@ -15,6 +15,7 @@ func main(){
 	//channel.SelectFibboci()
 	//channel.TimeSequenceDefault()
 	//channel.RUNEx()
-	channel.MutualExclusion()
+	//channel.MutualExclusion()
+	channel.Print50()
 	
 }
