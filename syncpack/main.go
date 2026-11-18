@@ -11,6 +11,7 @@ import (
 func main(){
 	print(methods.WaigGroup())
 	print(methods.Atomic())
+	print(methods.Channels())
 
 }
 
