@@ -1,0 +1,8 @@
+package main
+
+import "github.com/ronexlemon/dsa/context/context"
+
+
+func main(){
+	context.RunContext()
+}
