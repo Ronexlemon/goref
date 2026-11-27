@@ -8,4 +8,6 @@ func main(){
 	context.RunTask()
 	context.RunTaskWithTimeout()
 	context.RunWithValue()
+	context.RunTracingLayer()
+	context.RunStockInventory("orderId-1234556")
 }
