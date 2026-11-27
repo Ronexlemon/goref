@@ -73,3 +73,13 @@ func RunTaskWithTimeout(){
 		 fmt.Println("Nailed it!")
 	}
 }
+
+func handleRequest(ctx context.Context){
+	id:=ctx.Value("requestId").(string)
+	fmt.Println("Request ID:", id)
+}
+
+func RunWithValue(){
+	ctx:=context.WithValue(context.Background(),"requestId","0321-4743-7463-2733")
+	handleRequest(ctx)
+}

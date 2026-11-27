@@ -7,4 +7,5 @@ func main(){
 	context.RunContext()
 	context.RunTask()
 	context.RunTaskWithTimeout()
+	context.RunWithValue()
 }
