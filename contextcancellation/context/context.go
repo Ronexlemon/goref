@@ -52,3 +52,24 @@ func RunTask(){
 	cancel()
 	time.Sleep(1*time.Second)
 }
+
+func taskWithTimeOut(ctx context.Context)error{
+	select{
+	case <-time.After(3*time.Second):
+		fmt.Println("Slow query")
+		return nil
+	case <-ctx.Done():
+		return ctx.Err()
+
+	}
+}
+func RunTaskWithTimeout(){
+	ctx,cancel:=context.WithTimeout(context.Background(),2*time.Second)
+	defer cancel()
+
+	if err:=taskWithTimeOut(ctx);err!=nil{
+		 fmt.Println("Timed out:", err) 
+	}else{
+		 fmt.Println("Nailed it!")
+	}
+}
