@@ -15,5 +15,7 @@ func main(){
 	fmt.Println("Marshal token",marshal)
 	unmarshal := myJson.UnmarshialToken(marshal)
 	fmt.Println("Tokens",unmarshal)
+	myJson.TryEncode()
+
 	
 }
